@@ -329,7 +329,8 @@ def update_output(price, contentrating, size, types, genre, category):
     svr_result = svr_model.predict(input_data)
     return (' Predicted rating  is {}'.format(svr_result))        
 if __name__ == '__main__':
-    app.run_server(host='127.0.0.1', port='8050', proxy=None, debug=False, dev_tools_ui=None, dev_tools_props_check=None, dev_tools_serve_dev_bundles=None, dev_tools_hot_reload=None, dev_tools_hot_reload_interval=None, dev_tools_hot_reload_watch_interval=None, dev_tools_hot_reload_max_retry=None, dev_tools_silence_routes_logging=None, dev_tools_prune_errors=None)
+    app.run_server(debug=True)
+    #app.run_server(host='127.0.0.1', port='8050', proxy=None, debug=False, dev_tools_ui=None, dev_tools_props_check=None, dev_tools_serve_dev_bundles=None, dev_tools_hot_reload=None, dev_tools_hot_reload_interval=None, dev_tools_hot_reload_watch_interval=None, dev_tools_hot_reload_max_retry=None, dev_tools_silence_routes_logging=None, dev_tools_prune_errors=None)
 
     #app.run_server(debug=True)
     #port="8017"
