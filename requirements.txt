@@ -10,3 +10,4 @@ pandas
 numpy
 pickle-compat==2.1.0
 matplotlib
+gunicorn==19.9.0
