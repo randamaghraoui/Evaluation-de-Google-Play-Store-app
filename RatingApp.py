@@ -9,7 +9,7 @@ import base64
 import pickle
 
 from app import app
-image_filename = 'C:/Users/lenovo/Documents/Google-Play-Store-Rating-master/Images/153-1534763_5-stars-film-rating-clipart-png-download-5.png'
+image_filename = '153-1534763_5-stars-film-rating-clipart-png-download-5.png'
 encoded_image = base64.b64encode(open(image_filename, 'rb').read())
 
 
@@ -17,8 +17,7 @@ encoded_image = base64.b64encode(open(image_filename, 'rb').read())
 #from flask_ngrok import run_with_ngrok
 #from flask import Flask
 
-df = pd.read_csv(
-    'C:/Users/lenovo/Documents/Google-Play-Store-Rating-master/Data/googleplaystore.csv')
+df = pd.read_csv('googleplaystore.csv')
 df.dropna(inplace=True)
 types = df['Type'].unique()
 contentrating = df['Content Rating'].unique()
@@ -181,10 +180,10 @@ def update_output(price, contentrating, size, types, genre, category):
             #     data['Type'] = 1
 #app = dash.Dash(__name__)
     input_data = pd.DataFrame(data, index=[0])
-    svr_model = pickle.load(open(
-        'C:/Users/lenovo/Documents/Google-Play-Store-Rating-master/Models/DecTreeRegModel.sav', 'rb'))
-    svr_result = svr_model.predict(input_data)
-    return (' Predicted rating  is {}'.format(svr_result))
+    tree_model = pickle.load(open(
+        'DecTreeRegModel.sav', 'rb'))
+    tree_result = tree_model.predict(input_data)
+    return (' Predicted rating  is {}'.format(tree_result))
 
 #if __name__ == '__main__':
  #   app.run_server(debug=False)
