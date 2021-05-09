@@ -18,9 +18,8 @@ import matplotlib.pyplot as plt
 from RatingApp import tab_1_layout
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-data = pd.read_csv(
-    'C:/Users/lenovo/Documents/Google-Play-Store-Rating-master/Data/finaldata.csv')
-df = pd.read_csv('C:/Users/lenovo/Documents/Google-Play-Store-Rating-master/Data/googleplaystore_user_reviews.csv')
+data = pd.read_csv('finaldata.csv')
+df = pd.read_csv('googleplaystore_user_reviews.csv')
 
 app.config.suppress_callback_exceptions = True
 colors = {"background": "#F3F6FA", "background_div": "white", 'text': '#009999'}
@@ -325,7 +324,7 @@ def update_output(price, contentrating, size, types, genre, category):
 #app = dash.Dash(__name__)
     input_data = pd.DataFrame(data, index=[0])
     svr_model = pickle.load(open(
-        'C:/Users/lenovo/Documents/Google-Play-Store-Rating-master/Models/DecTreeRegModel.sav', 'rb'))
+        'DecTreeRegModel.sav', 'rb'))
     svr_result = svr_model.predict(input_data)
     return (' Predicted rating  is {}'.format(svr_result))        
 if __name__ == '__main__':
