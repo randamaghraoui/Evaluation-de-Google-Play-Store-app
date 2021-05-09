@@ -1,2 +1,1 @@
-worker: python Dashboard.py
-
+web : gunicorn Dashboard:server
