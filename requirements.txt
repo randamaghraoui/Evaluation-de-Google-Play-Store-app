@@ -10,8 +10,8 @@ Flask==1.1.1
 Flask-Compress==1.4.0
 
 joblib==0.13.2
-numpy==1.17.2
-pandas==0.25.1
+numpy
+pandas
 
 plotly==4.1.1
 
